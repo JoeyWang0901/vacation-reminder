@@ -1,0 +1,14 @@
+{
+  "name": "vacation-reminder",
+  "description": "Learn how to use serverless functions in less than 30 minutes!",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joey Wang",
+  "license": "MIT",
+  "devDependencies": {
+    "@netlify/functions": "^2.4.1"
+  }
+}

@@ -9,15 +9,27 @@
   <body>
     <h1>Up and Running with Serverless Functions</h1>
     <button id="fetch-btn">Fetch</button>
+    <button id="fetch-pokedex-btn">Fetch-Pokedex</button>
     <p id="response-output">Response Placeholder</p>
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const fetchBtn = document.getElementById('fetch-btn')
+        const fetchpokedexBtn = document.getElementById('fetch-pokedex-btn')
         const responseText = document.getElementById('response-output')
 
-        fetchBtn.addEventListener('click', () => {
-          responseText.innerText = 'Static Text Replacement'
+        fetchpokedexBtn.addEventListener('click', async () => {
+          const reaponse = await fetch('/.netlify/functions/pokedex')
+          .then(response => response.json()
+          )
+          responseText.innerText = JSON.stringify(reaponse)
+        })
+
+        fetchBtn.addEventListener('click', async () => {
+          const reaponse = await fetch('/.netlify/functions/hello-world')
+          .then(response => response.json()
+          )
+          responseText.innerText = JSON.stringify(reaponse)
         })
       })
     </script>
